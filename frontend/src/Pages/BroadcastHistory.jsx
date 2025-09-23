@@ -17,32 +17,35 @@ export default function BroadcastHistory() {
   return (
     <div className="flex min-h-screen bg-gray-50 flex-col md:flex-row">
       {/* Sidebar */}
-      <aside className="w-full md:w-64 bg-white border-b md:border-r p-4 space-y-4 sticky top-0">
-        <button className="block w-full text-left px-3 py-2 rounded hover:bg-green-50">
-          📩 Template Messages
-        </button>
+      <aside className="w-full lg:w-64 bg-white border-b lg:border-b-0 lg:border-r p-4 space-y-4">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Link
+                  to="/dashboard/template-library"
+                  className="px-3 py-2 rounded bg-gray-100 text-gray-800 font-medium text-sm hover:bg-green-50"
+                >
+                  📑 Template Library
+                </Link>
+                <Link
+                  to="/dashboard/your-templates"
+                  className="px-3 py-2 rounded bg-gray-100 text-gray-800 font-medium text-sm hover:bg-green-50"
+                >
+                  📄 Your Templates
+                </Link>
+                <Link
+                  to="/dashboard/broadcast-history"
+                  className="px-3 py-2 rounded bg-gray-100 text-gray-800 font-medium text-sm hover:bg-green-50"
+                >
+                  📊 Broadcast History
+                </Link>
+              </div>
+      
+              
+            </aside>
 
-        <Link
-          to="/dashboard/template-library"
-          className="block w-full px-4 py-2 rounded-lg bg-gray-100 hover:bg-green-600 hover:text-white transition"
-        >
-          📑 Template Library
-        </Link>
 
-        <Link
-          to="/dashboard/your-templates"
-          className="block w-full text-left px-3 py-2 rounded bg-green-100 text-green-700 font-medium"
-        >
-          📄 Your Templates
-        </Link>
 
-        <Link
-          to="/dashboard/broadcast-history"
-          className="block w-full px-4 py-2 rounded-lg bg-green-600 text-white font-semibold shadow"
-        >
-          📊 Broadcast History
-        </Link>
-      </aside>
+
+
 
       {/* Main Content */}
       <div className="flex-1 p-4 md:p-6">

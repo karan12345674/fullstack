@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import Singin from "../assets/Sakalogo.jpg";
+import Singin from "../assets/singup1.jpg";
 import API_BASE_URL from "../config";
 
 

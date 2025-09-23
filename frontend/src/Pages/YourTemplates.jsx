@@ -721,7 +721,7 @@ export default function YourTemplates() {
       <aside className="w-full lg:w-64 bg-white border-b lg:border-b-0 lg:border-r p-4 space-y-4">
         <button
           onClick={() => navigate("/dashboard/template-library")}
-          className="px-3 py-2 rounded bg-green-100 text-700 font-medium text-sm hover:bg-green-200"
+          className="px-3 py-2 rounded bg-gray-100 text-gray-800 font-medium text-sm hover:bg-green-50"
         >
           📑 Template Library
         </button>

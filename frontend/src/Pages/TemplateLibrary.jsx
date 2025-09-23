@@ -299,7 +299,7 @@ export default function TemplateLibrary() {
         <div className="flex flex-wrap gap-2 mb-4">
           <Link
             to="/dashboard/template-library"
-            className="px-3 py-2 rounded bg-green-100 text-700 font-medium text-sm hover:bg-green-200"
+            className="px-3 py-2 rounded bg-gray-100 text-gray-800 font-medium text-sm hover:bg-green-50"
           >
             📑 Template Library
           </Link>
@@ -325,9 +325,7 @@ export default function TemplateLibrary() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3">
           <h1 className="text-xl font-bold text-gray-800">Template Library</h1>
-          <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
-            New Template Message
-          </button>
+          {/*  */}
         </div>
 
         {/* Category Filter */}
@@ -361,9 +359,9 @@ export default function TemplateLibrary() {
                 </span>
               </div>
               <p className="text-sm text-gray-600 whitespace-pre-line">{template.body}</p>
-              <button className="mt-3 text-sm text-blue-600 hover:underline">
+              {/* <button className="mt-3 text-sm text-blue-600 hover:underline">
                 Use sample
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
