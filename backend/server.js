@@ -100,7 +100,7 @@ import bulkMessageRoutes from "./routes/bulkMessage.js";
 const allowedOrigins = [
   "http://sakaai.in",
   "https://sakaai.in",
-  "http://192.168.0.114:5173",
+  
 ];
 
 connectDB();
@@ -129,6 +129,6 @@ const PORT = process.env.PORT || 5000;
 
 console.log("✅ OpenAI Key from ENV:", process.env.OPENAI_API_KEY);
 
-app.listen(PORT, "192.168.0.114", () => {
+app.listen(PORT,  () => {
   console.log(`✅ Server running on http://192.168.0.114:${PORT}`);
 });
