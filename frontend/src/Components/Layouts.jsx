@@ -58,7 +58,7 @@ export default function Layout({ currentPageName }) {
                 <MessageSquare className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h2 className="font-bold text-slate-900 text-lg">WhatsApp Pro</h2>
+                <h2 className="font-bold text-slate-900 text-lg">SakaAI</h2>
                 <p className="text-xs text-slate-500 font-medium">Admin Panel</p>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function Layout({ currentPageName }) {
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton
                         asChild
-                        className={`group transition-all duration-200 rounded-lg ${
+                        className={`group transition-all duration-200 rounded-lg ₹{
                           location.pathname === item.url
                             ? "bg-blue-50 text-blue-700 border border-blue-200 shadow-sm"
                             : "text-slate-600 hover:bg-blue-50 hover:text-blue-700"

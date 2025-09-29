@@ -6,20 +6,21 @@ export default function Footer() {
   const productLinks = [
     { name: 'Features', to: '/feature' },
     { name: 'Pricing', to: '/pricing' },
-    { name: 'Templates', to: '' },
+
   ];
 
   const companyLinks = [
     { name: 'About Us', to: '/about' },
-    { name: 'Careers', to: '' },
-    { name: 'Partners', to: '/about' },
+    // { name: 'Careers', to: '' },
+      { name: 'Contact Us', to: '/contact' },
+  
   ];
 
   const supportLinks = [
     { name: 'Help Center', to: '/contact' },
-    { name: 'Contact Us', to: '/contact' },
+    // { name: 'Contact Us', to: '/contact' },
     { name: 'Privacy Policy', to: '/privacy' },
-    { name: 'Terms of Service', to: '/terms-of-service' },
+    
   ];
 
   return (
@@ -40,18 +41,36 @@ export default function Footer() {
               Perfect for gyms, restaurants, shops, and service businesses.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-200 group">
-                <Twitter className="w-5 h-5 text-slate-400 group-hover:text-blue-400" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-200 group">
-                <Linkedin className="w-5 h-5 text-slate-400 group-hover:text-blue-400" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-200 group">
-                <Instagram className="w-5 h-5 text-slate-400 group-hover:text-pink-400" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-200 group">
+              <a
+  href="https://x.com/SakaAI12?t=QOsZ-sBULJdXaUfEkzFmvw&s=09"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-200 group"
+>
+  <Twitter className="w-5 h-5 text-slate-400 group-hover:text-blue-400" />
+</a>
+
+<a
+  href="https://www.linkedin.com/in/saka-ai-394570387?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-200 group"
+>
+  <Linkedin className="w-5 h-5 text-slate-400 group-hover:text-blue-400" />
+</a>
+
+<a
+  href="https://www.instagram.com/sakaai.in?igsh=ZWN5NXFybHZlNmg2"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-200 group"
+>
+  <Instagram className="w-5 h-5 text-slate-400 group-hover:text-pink-400" />
+</a>
+
+              {/* <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors duration-200 group">
                 <Github className="w-5 h-5 text-slate-400 group-hover:text-white" />
-              </a>
+              </a> */}
             </div>
           </div>
 

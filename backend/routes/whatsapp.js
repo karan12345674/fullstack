@@ -1,30 +1,31 @@
-// import express from "express";
-// import { generateQR, disconnectSession, getSessionStatus,getQR } from "../controllers/whatsappController.js";
-// import { authMiddleware } from "../middleware/auth.js";
-
-// const router = express.Router();
-
-// router.post("/generateQR", authMiddleware, generateQR);
-// router.post("/disconnect", authMiddleware, disconnectSession);
-// router.get("/status", authMiddleware, getSessionStatus);
-// // Fetch QR for frontend polling
-// router.get("/getQR", authMiddleware, getQR);
-
-// export default router;
-
-
-
-// backend/routes/whatsappRoutes.js
 import express from "express";
-import { generateQR, disconnectSession, getSessionStatus, } from "../controllers/whatsappController.js";
+import { startSession, getQR, disconnectSession, sendBulkMessages, loadUserSessions } from "../controllers/whatsappController.js";
 import { authMiddleware } from "../middleware/auth.js";
+import checkSubscription from "../middleware/checkSubscription.js";
 
 const router = express.Router();
 
-// Protected routes
-router.post("/generateQR", authMiddleware, generateQR);
-//router.get("/getQR", authMiddleware, getQR);
-router.post("/disconnectSession", authMiddleware, disconnectSession);
-router.post("/getSessionStatus", authMiddleware, getSessionStatus);
+// Start WhatsApp session
+router.post("/start-session", authMiddleware,checkSubscription, startSession);
+
+// Get QR/status for a number
+router.get("/qr/:number", authMiddleware, getQR);
+
+// Disconnect a session
+router.post("/disconnect-session", authMiddleware, disconnectSession);
+
+// Send bulk messages
+router.post("/send-bulk", authMiddleware,checkSubscription, sendBulkMessages);
+
+// ✅ Get all sessions for logged-in user (userId from token)
+router.get("/user-sessions", authMiddleware, async (req, res) => {
+  try {
+    const sessions = await loadUserSessions(req.userId); // userId comes from auth middleware
+    res.json({ sessions });
+  } catch (err) {
+    console.error("Failed to fetch user sessions:", err);
+    res.status(500).json({ message: "Failed to fetch user sessions" });
+  }
+});
 
 export default router;

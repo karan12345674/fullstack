@@ -67,6 +67,14 @@ export default function DashboardNavbar() {
             Analytics
           </Link>
         </li>
+         <li>
+          <Link
+            to="/dashboard/Businessmanagment"
+            className="hover:text-green-600 focus:outline-none focus:text-green-700"
+          >
+            Business
+          </Link>
+        </li>
        
       </ul>
 
@@ -143,11 +151,11 @@ export default function DashboardNavbar() {
             </li>
             <li>
               <Link
-                to="/dashboard/more"
+                to="/dashboard/Businessmanagment"
                 className="hover:text-green-600 focus:outline-none focus:text-green-700"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-              
+              Business
               </Link>
             </li>
 

@@ -109,3 +109,34 @@ export const logout = async(req,res)=>{
         res.json({ success: false, message: error.message });
     }
 }
+
+
+
+
+/**
+ * Reset Password Controller
+ * Route: POST /api/user/reset-password
+ */
+export const resetPassword = async (req, res) => {
+  try {
+    const { email, newPassword } = req.body;
+
+    if (!email || !newPassword) {
+      return res.json({ success: false, message: "Email and new password required" });
+    }
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.json({ success: false, message: "User not found" });
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+    await user.save();
+
+    return res.json({ success: true, message: "Password updated successfully" });
+  } catch (error) {
+    console.error("❌ resetPassword error:", error.message);
+    res.json({ success: false, message: error.message });
+  }
+};

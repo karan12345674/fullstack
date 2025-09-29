@@ -42,8 +42,23 @@ export default function Navbar() {
             ))}
 
             {/* CTA Buttons */}
-            <Link to="/login" className="px-4 py-2 bg-blue-600 text-white rounded-lg">Login</Link>
-<Link to="/signup" className="px-4 py-2 bg-green-600 text-white rounded-lg">Signup</Link>
+            {/* CTA Buttons */}
+<Link 
+  to="/login" 
+  className="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-medium 
+             hover:bg-blue-700 hover:shadow-lg hover:scale-105 
+             transition-all duration-300 ease-out">
+  Login
+</Link>
+
+<Link 
+  to="/signup" 
+  className="px-5 py-2.5 rounded-lg bg-green-600 text-white font-medium ml-3
+             hover:bg-green-700 hover:shadow-lg hover:scale-105 
+             transition-all duration-300 ease-out">
+  Signup
+</Link>
+
           </div>
 
           {/* Mobile menu button */}
@@ -74,7 +89,7 @@ export default function Navbar() {
 
               {/* CTA Buttons for Mobile */}
               <Link to="/login" className="px-4 py-2 bg-blue-600 text-white rounded-lg">Login</Link>
-<Link to="/signup" className="px-4 py-2 bg-green-600 text-white rounded-lg">Signup</Link>
+               <Link to="/signup" className="px-4 py-2 bg-green-600 text-white rounded-lg">Signup</Link>
             </div>
           </div>
         )}

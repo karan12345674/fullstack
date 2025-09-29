@@ -1,0 +1,28 @@
+2025/09/28-16:25:33.076 56ac Reusing MANIFEST C:\Users\ASUS\OneDrive\Desktop\fullstack\backend\.wwebjs_auth\session-9522463882_1759053961931\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/09/28-16:25:33.077 56ac Recovering log #290
+2025/09/28-16:25:33.127 56ac Reusing old log C:\Users\ASUS\OneDrive\Desktop\fullstack\backend\.wwebjs_auth\session-9522463882_1759053961931\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000290.log 
+2025/09/28-16:25:35.056 1c80 Level-0 table #301: started
+2025/09/28-16:25:35.064 1c80 Level-0 table #301: 371414 bytes OK
+2025/09/28-16:25:35.066 1c80 Delete type=0 #290
+2025/09/28-16:25:35.066 1c80 Manual compaction at level-0 from '\x00\x1c\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1d\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/09/28-16:25:36.879 1c80 Compacting 1@1 + 7@2 files
+2025/09/28-16:25:36.960 1c80 Generated table #302@1: 57548 keys, 2225063 bytes
+2025/09/28-16:25:37.024 1c80 Generated table #303@1: 33046 keys, 2190683 bytes
+2025/09/28-16:25:37.045 1c80 Generated table #304@1: 2187 keys, 2141910 bytes
+2025/09/28-16:25:37.094 1c80 Generated table #305@1: 24129 keys, 2207974 bytes
+2025/09/28-16:25:37.127 1c80 Generated table #306@1: 14135 keys, 2144401 bytes
+2025/09/28-16:25:37.232 1c80 Generated table #307@1: 108214 keys, 2262009 bytes
+2025/09/28-16:25:37.316 1c80 Generated table #308@1: 91619 keys, 1925871 bytes
+2025/09/28-16:25:37.316 1c80 Compacted 1@1 + 7@2 files => 15097911 bytes
+2025/09/28-16:25:37.316 1c80 compacted to: files[ 0 0 7 0 0 0 0 ]
+2025/09/28-16:25:37.317 1c80 Delete type=2 #292
+2025/09/28-16:25:37.317 1c80 Delete type=2 #293
+2025/09/28-16:25:37.317 1c80 Delete type=2 #294
+2025/09/28-16:25:37.317 1c80 Delete type=2 #295
+2025/09/28-16:25:37.317 1c80 Delete type=2 #296
+2025/09/28-16:25:37.317 1c80 Delete type=2 #297
+2025/09/28-16:25:37.317 1c80 Delete type=2 #298
+2025/09/28-16:25:37.317 1c80 Delete type=2 #301
+2025/09/28-16:28:56.831 6844 Level-0 table #310: started
+2025/09/28-16:28:56.875 6844 Level-0 table #310: 1087099 bytes OK
+2025/09/28-16:28:56.877 6844 Delete type=0 #300

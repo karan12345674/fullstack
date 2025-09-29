@@ -11,23 +11,23 @@ export default function Home() {
   const features = [
     {
       icon: Zap,
-      title: "Lightning Fast",
+      title: "Bulk Messages",
       description:
-        "Process millions of data points in seconds with our optimized AI algorithms",
+        "Deliver Your Message Instantly to Everyone — Anytime, Anywhere",
       gradient: "from-blue-500 to-blue-600",
     },
     {
       icon: Globe,
-      title: "Global Scale",
+      title: "Lead Generate",
       description:
-        "Deploy worldwide with our distributed infrastructure and edge computing",
+        "Smart Leads, Real Growth — Unlock New Opportunities with Every Message",
       gradient: "from-purple-500 to-purple-600",
     },
     {
       icon: Sparkles,
-      title: "AI-Powered",
+      title: "AI Agent",
       description:
-        "Advanced machine learning models that adapt and learn from your data",
+        "Your smart assistant that engages, responds, and converts in real-time",
       gradient: "from-pink-500 to-pink-600",
     },
   ];

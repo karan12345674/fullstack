@@ -6,6 +6,9 @@ import { Badge } from "@Components/UI/Badge";
 import { Input } from "@Components/UI/Input";
 import { ArrowLeft, User, BarChart2, CreditCard, Settings } from "lucide-react";
 import { format } from "date-fns";
+import axios from "axios";
+import { useSearchParams } from "react-router-dom";
+import API_BASE_URL from "../../config";
 
 const statusColors = {
   trial: "bg-blue-100 text-blue-800 border-blue-200",
@@ -18,31 +21,29 @@ const statusColors = {
 export default function ClientProfile() {
   const [client, setClient] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  // Dummy client data for frontend
-  const dummyClient = {
-    company_name: "Acme Corp",
-    contact_name: "John Doe",
-    contact_email: "john@acme.com",
-    status: "active",
-    signup_date: "2023-01-15",
-    plan_tier: "Professional",
-    monthly_spend: 1200,
-    messages_sent_month: 450,
-    ai_enabled: true,
-    api_key: "abc123xyz456",
-  };
+  const [searchParams] = useSearchParams();
+  const userId = searchParams.get("id");
 
   useEffect(() => {
-    // Simulate API call delay
-    setTimeout(() => {
-      setClient(dummyClient);
-      setIsLoading(false);
-    }, 500);
-  }, []);
+    const fetchClient = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/admin/clientprofile/${userId}`);
+        setClient(res.data);
+        setIsLoading(false);
+      } catch (err) {
+        console.error("Error fetching client profile:", err);
+        setIsLoading(false);
+      }
+    };
+    fetchClient();
+  }, [userId]);
 
   if (isLoading) {
     return <div className="text-center p-8">Loading client profile...</div>;
+  }
+
+  if (!client) {
+    return <div className="text-center p-8">Client not found.</div>;
   }
 
   return (

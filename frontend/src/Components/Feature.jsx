@@ -65,7 +65,7 @@ export default function Features() {
             <span className="gradient-text">Revolutionary</span> Features
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the cutting-edge capabilities that make NexusAI the most advanced 
+            Discover the cutting-edge capabilities that make sakaAI the most advanced 
             business intelligence platform in the world.
           </p>
         </motion.div>

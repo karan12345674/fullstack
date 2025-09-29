@@ -192,6 +192,8 @@ import Contacts from "./Pages/Contacts";
 import Analytics from "./Pages/Analytics";
 import ProductDetails from "./Pages/ProductDetails";
 import ProfileSettings from "./Pages/ProfileSettings";
+import Pricingt from "./Pages/Pricingt";
+import Businessmanagment from "./Pages/Businessmanagment";
 
 
 // Admin Pages
@@ -263,6 +265,8 @@ function LayoutWrapper() {
           <Route path="contacts" element={<Contacts />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="chatbots" element={<ProductDetails />} />
+          <Route path="Pricingt" element={<Pricingt />} />
+          <Route path="Businessmanagment" element={<Businessmanagment />} />
           
         </Route>
           <Route path="/logo" element={<Dashboard />} />

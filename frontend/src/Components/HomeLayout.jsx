@@ -181,18 +181,23 @@ export default function HomeLayout({ children, currentPageName }) {
              
 {/* Auth Buttons */}
 <div className="hidden lg:flex items-center space-x-4">
-  <Link 
-    to="/login" 
-    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-  >
-    Login
-  </Link>
-  <Link 
-    to="/signup" 
-    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
-  >
-    Signup
-  </Link>
+  {/* CTA Buttons */}
+<Link 
+  to="/login" 
+  className="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-medium 
+             hover:bg-blue-700 hover:shadow-lg hover:scale-105 
+             transition-all duration-300 ease-out">
+  Login
+</Link>
+
+<Link 
+  to="/signup" 
+  className="px-5 py-2.5 rounded-lg bg-green-600 text-white font-medium ml-3
+             hover:bg-green-700 hover:shadow-lg hover:scale-105 
+             transition-all duration-300 ease-out">
+  Signup
+</Link>
+
 </div>
 
                       
@@ -227,8 +232,23 @@ export default function HomeLayout({ children, currentPageName }) {
                 </Link>
               ))}
             
-              <Link to="/login" className="px-4 py-2 bg-blue-600 text-white rounded-lg">Login</Link>
-              <Link to="/signup" className="px-4 py-2 bg-green-600 text-white rounded-lg">Signup</Link>
+              {/* CTA Buttons */}
+<Link 
+  to="/login" 
+  className="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-medium 
+             hover:bg-blue-700 hover:shadow-lg hover:scale-105 
+             transition-all duration-300 ease-out">
+  Login
+</Link>
+
+<Link 
+  to="/signup" 
+  className="px-5 py-2.5 rounded-lg bg-green-600 text-white font-medium ml-3
+             hover:bg-green-700 hover:shadow-lg hover:scale-105 
+             transition-all duration-300 ease-out">
+  Signup
+</Link>
+
                         
             </nav>
           </div>

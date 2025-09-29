@@ -39,7 +39,7 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Mail, title: "Email Us", details: "info@sakaai.com", description: "Get in touch for any questions" },
+    { icon: Mail, title: "Email Us", details: "info@sakaai.in" },
     { icon: Phone, title: "Call Us", details: "(+91) 9522463882, (+91) 9302012175 " , description: "Mon-Fri 9AM-6PM PST" },
     { icon: MapPin, title: "Visit Us", details: "https://sakaai.in", description: "" }
   ];
@@ -130,10 +130,10 @@ export default function Contact() {
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                       >
                         <option value="">Select budget</option>
-                        <option value="<10k">Less than $10k</option>
-                        <option value="10k-50k">$10k - $50k</option>
-                        <option value="50k-100k">$50k - $100k</option>
-                        <option value="100k+">$100k+</option>
+                        <option value="<10k">Less than 10k</option>
+                        <option value="10k-50k">10k - 50k</option>
+                        <option value="50k-100k">50k - 100k</option>
+                        <option value="100k+">100k+</option>
                       </select>
                     </div>
                   </div>

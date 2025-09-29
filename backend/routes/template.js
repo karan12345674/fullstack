@@ -1,5 +1,5 @@
 import express from "express";
-import { createTemplate, getTemplates, updateTemplate, deleteTemplate } from "../controllers/templateController.js";
+import { createTemplate, getTemplates, updateTemplate, deleteTemplate, getTemplateById } from "../controllers/templateController.js";
 import { authMiddleware } from "../middleware/auth.js";
 import { uploadFile } from "../middleware/uploadMiddleware.js";
 
@@ -10,7 +10,7 @@ router.post("/createTemplate", authMiddleware, uploadFile.single("file"), create
 
 // Get all templates
 router.get("/getTemplates", authMiddleware, getTemplates);
-
+router.get("/getTemplateById/:id", authMiddleware, getTemplateById);
 // Update template (with optional file)
 router.put("/:id", authMiddleware, uploadFile.single("file"), updateTemplate);
 

@@ -7,8 +7,10 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Input } from "@Components/UI/Input";
 import { Button } from "@Components/UI/Button";
 import { Badge } from "@Components/UI/Badge";
-import { PlusCircle, Mail, Trash, MoreHorizontal, Eye, Edit, Search } from "lucide-react";
+import { PlusCircle, Mail, Trash, MoreHorizontal, Search } from "lucide-react";
 import { format } from "date-fns";
+import axios from "axios";
+import API_BASE_URL from "../../config";
 
 // Status colors
 const statusColors = {
@@ -19,13 +21,6 @@ const statusColors = {
   cancelled: "bg-slate-100 text-slate-800 border-slate-200",
 };
 
-// Dummy client data
-const dummyClients = [
-  { id: 1, company_name: "Acme Corp", contact_email: "john@acme.com", plan_tier: "Pro", status: "active", signup_date: "2023-01-15", monthly_spend: 1200 },
-  { id: 2, company_name: "Beta LLC", contact_email: "sara@beta.com", plan_tier: "Trial", status: "trial", signup_date: "2023-03-22", monthly_spend: 0 },
-  { id: 3, company_name: "Gamma Inc", contact_email: "tom@gamma.com", plan_tier: "Enterprise", status: "past_due", signup_date: "2022-12-05", monthly_spend: 5000 },
-];
-
 export default function ClientsPage() {
   const navigate = useNavigate();
   const [clients, setClients] = useState([]);
@@ -34,14 +29,23 @@ export default function ClientsPage() {
   const [selectedClients, setSelectedClients] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Fetch clients from API
   useEffect(() => {
-    setTimeout(() => {
-      setClients(dummyClients);
-      setFilteredClients(dummyClients);
-      setIsLoading(false);
-    }, 500);
+    const fetchClients = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/admin/clients`); // API from previous step
+        setClients(res.data);
+        setFilteredClients(res.data);
+        setIsLoading(false);
+      } catch (err) {
+        console.error("Error fetching clients:", err);
+        setIsLoading(false);
+      }
+    };
+    fetchClients();
   }, []);
 
+  // Filter clients based on search
   useEffect(() => {
     const results = clients.filter(client =>
       client.company_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -119,9 +123,9 @@ export default function ClientsPage() {
           </TableHeader>
           <TableBody>
             {isLoading ? (
-              Array(3).fill(0).map((_, i) => (
-                <TableRow key={i}><TableCell colSpan={7} className="text-center p-4">Loading...</TableCell></TableRow>
-              ))
+              <TableRow>
+                <TableCell colSpan={7} className="text-center p-4">Loading clients...</TableCell>
+              </TableRow>
             ) : filteredClients.length > 0 ? (
               filteredClients.map(client => (
                 <TableRow key={client.id} className="hover:bg-slate-50 cursor-pointer">
@@ -134,7 +138,7 @@ export default function ClientsPage() {
                     <Badge className={statusColors[client.status]}>{client.status}</Badge>
                   </TableCell>
                   <TableCell onClick={() => handleRowClick(client.id)}>{format(new Date(client.signup_date), "MMM d, yyyy")}</TableCell>
-                  <TableCell onClick={() => handleRowClick(client.id)}>${(client.monthly_spend || 0).toFixed(2)}</TableCell>
+                  <TableCell onClick={() => handleRowClick(client.id)}>₹{(client.monthly_spend || 0).toFixed(2)}</TableCell>
                   <TableCell onClick={(e) => e.stopPropagation()}>
                     <Button 
                       variant="ghost" 

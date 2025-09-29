@@ -114,3 +114,24 @@ export const deleteContact = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+/**
+ * Delete All Contacts (user ke saare contacts delete)
+ */
+export const deleteAllContacts = async (req, res) => {
+  try {
+    const result = await Contact.deleteMany({ userId: req.userId });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: "No contacts found to delete" });
+    }
+
+    res.json({
+      message: "All contacts deleted successfully",
+      deletedCount: result.deletedCount,
+    });
+  } catch (err) {
+    console.error("❌ deleteAllContacts error:", err);
+    res.status(500).json({ message: err.message });
+  }
+};

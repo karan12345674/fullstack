@@ -66,7 +66,7 @@ export default function RevenueChart({ data = defaultData, isLoading }) {
           </div>
         </div>
         <p className="text-sm text-slate-500 mt-1">
-          Total: ${totalRevenue.toLocaleString()}
+          Total: ₹{totalRevenue.toLocaleString()}
         </p>
       </CardHeader>
       <CardContent className="p-6">
@@ -90,10 +90,10 @@ export default function RevenueChart({ data = defaultData, isLoading }) {
                 axisLine={false}
                 tickLine={false}
                 className="text-sm text-slate-500"
-                tickFormatter={(value) => `$${value / 1000}k`}
+                tickFormatter={(value) => `₹${value }k`}
               />
               <Tooltip
-                formatter={(value) => [`$${value.toLocaleString()}`, "Revenue"]}
+                formatter={(value) => [`₹${value.toLocaleString()}`, "Revenue"]}
                 labelClassName="text-slate-900"
                 contentStyle={{
                   backgroundColor: "white",

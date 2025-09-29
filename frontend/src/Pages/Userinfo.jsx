@@ -63,13 +63,13 @@ export default function Profile() {
         {/* Action Buttons */}
         <div className="flex flex-col gap-3">
           <Button
-            onClick={handleSubscribe}
+            onClick={() => navigate("/dashboard/Pricingt")}
             className="bg-blue-600 text-white hover:bg-blue-700"
           >
             Subscription
           </Button>
           <Button
-            onClick={handleStartFreeTrial}
+           onClick={() => navigate("/Freetrial")}
             className="bg-yellow-500 text-white hover:bg-yellow-600"
           >
             Start Free Trial

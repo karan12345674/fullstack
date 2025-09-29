@@ -54,7 +54,7 @@ export default function KPICard({
                   <TrendingDown className="w-4 h-4 text-red-500" />
                 )}
                 <span
-                  className={`text-sm font-medium ${
+                  className={`text-sm font-medium ₹{
                     trendDirection === "up"
                       ? "text-emerald-600"
                       : "text-red-500"
